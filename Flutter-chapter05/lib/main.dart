@@ -2,26 +2,42 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-//Flexible 예제
+//Stack 예제
 void main() {
-  runApp(
-    Column(
-      children: [
-       Flexible(
-           //flex는 남은 공간을 차지할 비율을 의미합니다.
-         //flex 값을 제공하지 않으면 기본 값은 1 입니다.
-         flex: 3,
-        child: Container(
-          color: Colors.blue,
-        ),
-       ),
-        Flexible(
-            flex: 1,
-            child:  Container(
+  runApp(stackEx());
+}
+
+class stackEx extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return (
+    MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+              height: 300.0,
+              width: 300.0,
               color: Colors.red,
             ),
-        )
-      ],
+            Container(
+              height: 250.0,
+              width: 250.0,
+              color: Colors.green,
+            ),
+            Container(
+              height: 200.0,
+              width: 200.0,
+              color: Colors.blue,
+            ),
+          ],
+        ),
+      ),
     )
-  );
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
 }
+
