@@ -2,22 +2,22 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-//SafeArea 예제
+//Colum 예제
 void main() {
-  runApp(RowWidgetExample());
+  runApp(ColumnWidgetExample());
 }
-class RowWidgetExample extends StatelessWidget{
+class ColumnWidgetExample extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SizedBox(
           //주축 정렬 지정
-          height: double.infinity,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             //반대축 정렬지정
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
 
             //넣고싶은 위젯 입력
             children: [
