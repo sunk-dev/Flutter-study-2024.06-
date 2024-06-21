@@ -4,21 +4,51 @@ import 'package:flutter/material.dart';
 
 //SafeArea 예제
 void main() {
-  runApp(
-    SafeArea(
-      //원하는 부위만 따로 적용가능
-      //true 적용 , false 미적용
-      top: true,
-      bottom: true,
-      left: true,
-      right: true,
-      child: Container(
-        color: Colors.red,
-        height: 300.0,
-        width: 300.0,
-      ),
-
-    )
-  );
+  runApp(RowWidgetExample());
 }
+class RowWidgetExample extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: SizedBox(
+          //주축 정렬 지정
+          height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            //반대축 정렬지정
+            crossAxisAlignment: CrossAxisAlignment.start,
 
+            //넣고싶은 위젯 입력
+            children: [
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.red,
+              ),
+
+              //Sized Box는 일반적으로 공백을 생성할때 사용
+              const SizedBox(width: 12.0,),
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.green,
+              ),
+              const SizedBox(width: 12.0,),
+              Container(
+                height: 50.0,
+                width: 50.0,
+                color: Colors.blue,
+              ),
+
+
+            ],
+          ),
+        ),
+      ),
+    );
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+
+}
